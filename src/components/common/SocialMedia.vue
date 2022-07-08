@@ -22,18 +22,19 @@ export default {
 <style lang="scss" scoped>
 
 .social-media-links {
+    display: flex;
+    justify-content: center;
+    margin-top: -16px;
+    margin-bottom: 32px;
     li {
         width: 58px;
         height: 58px;
-        margin-right: 16px; 
+        margin: 0 16px; 
         padding: 1px;  
         &:hover {
             padding: 0;          
         }               
     }
-    display: flex;
-    justify-content: center;
-    margin-bottom: 32px;
     a {
         display: block;
         background-color: rgb(49, 147, 50);

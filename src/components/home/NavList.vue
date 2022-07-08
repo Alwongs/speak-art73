@@ -6,7 +6,7 @@
             </button>                      
         </li>
         <li class="nav-item">
-            <button class="lang-btn yellow">
+            <button class="lang-btn green">
                 КИТАЙСКИЙ ЯЗЫК            
             </button>                      
         </li>
@@ -16,7 +16,7 @@
             </button>                   
         </li>
         <li class="nav-item">
-            <button class="lang-btn yellow">
+            <button class="lang-btn green">
                 ТЕМАТИЧЕСКИЕ ИНТЕНСИВЫ             
             </button>                     
         </li>                
@@ -49,15 +49,22 @@ export default {
         padding: 0 16px;
         cursor: pointer;
         &.blue {
-            border: 2px solid rgba(44, 59, 189, 0.934);
-            box-shadow: 0px 0px 10px 4px rgb(44, 59, 189),
-                        inset 0px 0px 10px 4px rgba(44, 59, 189, 0.559);
+            border: 2px solid rgba(161, 75, 187, 0.934);
+            box-shadow: 0px 0px 10px 4px rgb(161, 75, 187),
+                        inset 0px 0px 10px 4px rgba(161, 75, 187, 0.559);
+            &:hover {
+                background-color: rgba(161, 75, 187, 0.1); 
+            }                         
         }
-        &.yellow {
+        &.green {
             border: 2px solid rgba(44, 189, 46, 0.934);
             box-shadow: 0px 0px 10px 4px rgb(44, 189, 46),
-                        inset 0px 0px 10px 4px rgba(44, 189, 46, 0.559);        
+                        inset 0px 0px 10px 4px rgba(44, 189, 46, 0.559); 
+            &:hover {
+                background-color: rgba(44, 189, 46, 0.1); 
+            }       
         }
+
     }    
 }
 </style>

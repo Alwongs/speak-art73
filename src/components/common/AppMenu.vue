@@ -13,7 +13,7 @@
             ></div>
             <div class="menu">
                 <ul class="nav-list">
-                    <li class="nav-item">
+                    <li class="nav-item" @click.prevent="$router.push('english-page')">
                         Английский язык                               
                     </li>
                     <li class="nav-item">
@@ -74,13 +74,13 @@ export default {
     color: white;
     background: rgba(113, 104, 171, 0.934);
     border-radius: 50%;
-    width: 200vw;
-    height: 200vw;
+    width: 250vw;
+    height: 250vw;
     display: flex;
     flex: none;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s ease;
+    transition: all 0.7s ease;
     &.disactive {
         transform: scale(0);   
     }

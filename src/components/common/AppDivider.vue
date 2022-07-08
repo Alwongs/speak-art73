@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     padding: 0 32px;
+    margin-bottom: 32px; 
 }
 .arrow-bottom {
     background-image: url('../../assets/img/svg/arrow.svg');
