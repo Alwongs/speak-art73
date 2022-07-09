@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import AppDivider from '@/components/common/AppDivider.vue'
-import SocialMedia from '@/components/common/SocialMedia.vue'
+import AppDivider from '@/components/app/AppDivider.vue'
+import SocialMedia from '@/components/app/SocialMedia.vue'
 
 export default {
     name: 'AppFooter',

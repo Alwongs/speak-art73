@@ -1,7 +1,7 @@
 <template>     
     <main class="home-page">
         <img 
-            :src="require('@/assets/img/jpg/home_1.jpg')"  
+            :src="require('@/assets/img/jpg/001.jpg')"  
             alt="photo"
             class="img-home"
         >
@@ -12,7 +12,7 @@
             С 2007 года работаю, преподаю и прохожу практику за границей. За это время получила множество иностранных сертификатов, подтверждающих мои знания. Благодаря многолетнему опыту и практике, я знаю как сделать занятия не только полезными, но и интересными. В ТТЦ «Speakart» уроки проходят в форме игры. Именно так информация усваивается лучше всего, а новые знания сразу применяются на практике.
         </p>
         <img 
-            :src="require('@/assets/img/jpg/home_2.jpg')"  
+            :src="require('@/assets/img/jpg/002.jpg')"  
             alt="photo"
             class="img-home"
         >     
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import AppDivider from '@/components/common/AppDivider.vue'
+import AppDivider from '@/components/app/AppDivider.vue'
 import NavList from '@/components/home/NavList.vue'
 
 export default {

@@ -30,13 +30,14 @@ export default {
 
 <style lang="scss" scoped>
 .app-panel {
-    background-color: rgb(161, 75, 187);
+    z-index: 1;
+    background-color: $lilac;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;    
-    height: 48px;
+    height: 56px;
     color: white;     
     @media (max-width: 768px) {
         height: 64px;

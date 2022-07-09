@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import AppHeader from '@/components/common/AppHeader.vue'
-import AppPanel from '@/components/common/AppPanel.vue'
-import AppMenu from '@/components/common/AppMenu.vue'
-import AppFooter from '@/components/common/AppFooter.vue'
+import AppHeader from '@/components/app/AppHeader.vue'
+import AppPanel from '@/components/app/AppPanel.vue'
+import AppMenu from '@/components/app/AppMenu.vue'
+import AppFooter from '@/components/app/AppFooter.vue'
 
 export default {
     name: 'App',
@@ -32,15 +32,14 @@ export default {
     width: 60vw;
     margin: 0 auto;
     padding-top: 64px;
-    @media (min-width: 1024px) and (max-width: 1440px) {
+    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
         width: 70vw;
     }     
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
         width: 80vw;
     }      
-    @media (max-width: 768px) {
+    @media (max-width: $mobile-max) {
         width: 95vw;
     } 
 }
-
 </style>

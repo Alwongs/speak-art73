@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AppDivider from '@/components/common/AppDivider.vue'
+import AppDivider from '@/components/app/AppDivider.vue'
 
 export default {
     name: 'AppHeader',

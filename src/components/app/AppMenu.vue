@@ -13,19 +13,34 @@
             ></div>
             <div class="menu">
                 <ul class="nav-list">
-                    <li class="nav-item" @click.prevent="$router.push('english-page')">
+                    <li 
+                        class="nav-item" 
+                        @click.prevent="goTo('english-page')"
+                    >
                         Английский язык                               
                     </li>
-                    <li class="nav-item">
+                    <li 
+                        class="nav-item" 
+                        @click.prevent="goTo('chinese-page')"
+                    >
                         Китайский язык                       
                     </li>
-                    <li class="nav-item">
+                    <li 
+                        class="nav-item" 
+                        @click.prevent="goTo('master-classes')"
+                    >
                         Мастер-классы               
                     </li>
-                    <li class="nav-item">
+                    <li 
+                        class="nav-item" 
+                        @click.prevent="goTo('theme-intensives')"
+                    >
                         Тематические интенсивы              
                     </li>                
-                    <li class="nav-item">
+                    <li 
+                        class="nav-item" 
+                        @click.prevent="goTo('excursions-page')"
+                    >
                         Экскурсии             
                     </li>                
                 </ul>             
@@ -44,10 +59,11 @@ export default {
     },
     methods: {
         goTo(route) {
-            this.$router.push(route)
+            this.$store.commit('TOGGLE_MENU');
+            this.$router.push(route);
         },
         toggleMenu(){
-            this.$store.commit('TOGGLE_MENU')
+            this.$store.commit('TOGGLE_MENU');
         }
     }    
 }
@@ -56,6 +72,7 @@ export default {
 <style lang="scss" scoped>
 
 .menu-wrap {
+    z-index: 2;
     font-size: 22px;
     position: fixed;
     top: 0;
@@ -72,7 +89,7 @@ export default {
 }
 .menu-bg {
     color: white;
-    background: rgba(113, 104, 171, 0.934);
+    background: $bg-menu;
     border-radius: 50%;
     width: 250vw;
     height: 250vw;
@@ -105,5 +122,9 @@ export default {
 .nav-item {
     text-align: center;
     margin-bottom: 32px;
+    cursor: pointer;
+    &:hover {
+        color: rgb(0, 255, 0);
+    }
 }
 </style>

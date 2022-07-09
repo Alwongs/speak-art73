@@ -25,7 +25,12 @@ const routes = [
         path: '/theme-intensives',
         name: 'theme-intensives',
         component: () => import('@/views/ThemeIntensives.vue')
-    }
+    },
+    {
+        path: '/excursions-page',
+        name: 'excursions-page',
+        component: () => import('@/views/ExcursionsPage.vue')
+    },
 ]
 
 const router = createRouter({

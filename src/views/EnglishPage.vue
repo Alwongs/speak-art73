@@ -1,7 +1,7 @@
 <template>
     <main class="english-page">
         <img 
-            :src="require('@/assets/img/jpg/english_1.jpg')"  
+            :src="require('@/assets/img/jpg/english/001.jpg')"  
             alt="photo"
             class="img-english"
         >
@@ -12,20 +12,25 @@
             ‌Мы рады видеть на занятиях детей от 3 до 18 лет. Все уроки проходят  в небольших группах по 4−5 детей. Для малышей дошкольного возраста уроки длятся по 30 минут, для школьников по 40−60 минут. Вы можете выбрать удобный для вас формат занятий: «театр» или группу неполного дня.
         </p>
         <img 
-            :src="require('@/assets/img/jpg/english_2.jpg')"  
+            :src="require('@/assets/img/jpg/english/002.jpg')"  
             alt="photo"
             class="img-english"
         > 
-        <english-theater />        
+        <theater-group/> 
+        <part-time />      
     </main>   
 </template>
 
 <script>
-import EnglishTheater from '@/components/english/EnglishTheater.vue'
+import TheaterGroup from '@/components/english/TheaterGroup.vue'
+import PartTime from '@/components/english/PartTime.vue'
 
 export default {
     name: 'EnglishPage', 
-    components: { EnglishTheater },   
+    components: { 
+        TheaterGroup,
+        PartTime 
+    },   
 }
 </script>
 
@@ -40,4 +45,5 @@ p {
     line-height: 22px;
     margin-bottom: 16px;
 }
+
 </style>
