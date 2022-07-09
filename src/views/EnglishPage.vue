@@ -3,7 +3,7 @@
         <img 
             :src="require('@/assets/img/jpg/english_1.jpg')"  
             alt="photo"
-            class="img-about img-about-1"
+            class="img-english"
         >
         <p>
             В нашем творческом центре мы изучаем английский язык в форме игры. Благодаря такой методике, дети учатся применять полученные знания сразу на практике и лучше усваивают их. На занятия они полностью погружаются в привычную игровую среду, поэтому учеба становится интереснее и приятнее.
@@ -14,7 +14,7 @@
         <img 
             :src="require('@/assets/img/jpg/english_2.jpg')"  
             alt="photo"
-            class="img-about img-about-2"
+            class="img-english"
         > 
         <english-theater />        
     </main>   
@@ -31,15 +31,13 @@ export default {
 
 <style lang="scss" scoped>
 
-main {
-    .img-about {
-        width: 100%;
-        border-radius: 5px;
-        margin-bottom: 16px;    
-    }
-    p {
-        line-height: 22px;
-        margin-bottom: 16px;
-    }
+.img-english {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 16px;    
+}
+p {
+    line-height: 22px;
+    margin-bottom: 16px;
 }
 </style>
