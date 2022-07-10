@@ -104,8 +104,8 @@ export default {
 }
 .btn-close {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 16px;
+    right: 10px;
     cursor: pointer;
     background-image: url('../../assets/img/svg/menu_close_btn.svg');
     background-position: center;

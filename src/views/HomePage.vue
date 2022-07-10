@@ -17,7 +17,7 @@
             class="img-home"
         >     
         <app-divider />  
-        <p>
+        <p class="mb-32">
             Наш центр — это уникальная площадка для углубленного изучения иностранных языков и реализации творческих идей.
         </p>  
         <img 
@@ -48,10 +48,15 @@ export default {
 .img-home {
     width: 100%;
     border-radius: 5px;
-    margin-bottom: 16px;    
+    margin-bottom: 16px; 
+    @media (max-width: $mobile-max) {
+        border-radius: 0;
+    }    
 }
 p {
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 16px;
     margin-bottom: 16px;
 }
 </style>

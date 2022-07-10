@@ -27,6 +27,7 @@ export default {
     margin-bottom: 32px;
     .logo {
         width: 100%;
+        padding: 10px;
         margin-bottom: 16px;
     }
     h1 {

@@ -1,105 +1,106 @@
 <template>
-    <div 
-        v-if="!isBlockOpen" 
-        class="wrap-btn" 
-        @click="toggleBlock"
-    >
-        <div class="btn btn-trigger">
+    <div class="part-time">
+        <div 
+            v-if="!isBlockOpen" 
+            class="wrap-btn" 
+            @click="toggleBlock"
+        >
+            <div class="btn btn-trigger">
+                <div class="title">
+                    ГРУППА НЕПОЛНОГО ДНЯ
+                </div>
+                <div class="close">
+                    &#9660;
+                </div>                
+            </div>
+        </div>
+
+        <div 
+            v-else  
+            class="section-panel"
+        >
             <div class="title">
                 ГРУППА НЕПОЛНОГО ДНЯ
             </div>
-            <div class="close">
-                х
-            </div>                
+            <div 
+                class="close" 
+                @click="toggleBlock"
+            >
+                &#9650;
+            </div>
         </div>
-    </div>
 
-    <div 
-        v-else  
-        class="section-panel"
-    >
-        <div class="title">
-            ГРУППА НЕПОЛНОГО ДНЯ
+        <div class="wrap-section">
+            <section 
+                :class="{ collapsible: isBlockOpen }"
+                class="section"
+            >
+                <app-header />
+                <main>
+                    <img 
+                        :src="require('@/assets/img/jpg/english/part-time/001.jpg')"  
+                        alt="photo"
+                        class="img-about img-about-1"
+                    >
+                    <p>
+                        Мы предлагаем вашим малышам полное погружение в языковую среду.             
+                    </p>
+                    <p>
+                        Язык нужно учить так, чтобы можно было его применить. Мы успешно сочетаем приятное с полезным: учим готовить вкусненькое на английском языке. Ребята под присмотром, конечно, сами делают и тесто, и жарят блинчики, и пекут, и мешают и многое другое.
+                    </p>
+                    <p>
+                        Мы рисуем и творим — даём волю фантазии, а у детей она развита на все 200%! Используем разные техники рисования и делаем удивительные поделки — и всё это тоже на английском!
+                    </p>
+                    <p>
+                        Каждая неделя тематическая — мы «летаем в космос» и «погружаемся на морское дно», а можем даже «зайти в логово зверей».
+                    </p>
+                    <p>
+                        Три дня в неделю — понедельник, среда и пятница с 9.00 до 12.00 ждём ваших чудесных деток! (При наборе группы — каждый день)
+                    </p>
+                    <app-divider />
+                    <app-slider :data="$store.getters.slider_english_part_time" />                
+
+                    <app-divider />
+
+                    <h1>СТОИМОСТЬ</h1>
+
+                    <ul class="price-list">
+                        <li class="price-item">
+                            <div class="item-name">
+                                1 занятие
+                            </div>
+                            <div class="dots"></div>
+                            <div class="item-price">
+                                600.00р
+                            </div>
+                        </li>
+                    </ul> 
+    
+                    <div class="wrap-btn">
+                        <div class="btn btn-pulsing">
+                            <div class="title">
+                                ЗАПИСАТЬСЯ
+                            </div>
+                            <div class="close">
+                                &#9658;
+                            </div>                
+                        </div>
+                    </div> 
+                </main>       
+            </section>
         </div>
-        <div 
-            class="close" 
-            @click="toggleBlock"
-        >
-            х
-        </div>
-    </div>
-
-    <div class="wrap-section">
-        <section 
-            :class="{ collapsible: isBlockOpen }"
-            class="section"
-        >
-            <app-header />
-            <main>
-                <img 
-                    :src="require('@/assets/img/jpg/english/part-time/001.jpg')"  
-                    alt="photo"
-                    class="img-about img-about-1"
-                >
-                <p>
-                    Мы предлагаем вашим малышам полное погружение в языковую среду.             
-                </p>
-                <p>
-                    Язык нужно учить так, чтобы можно было его применить. Мы успешно сочетаем приятное с полезным: учим готовить вкусненькое на английском языке. Ребята под присмотром, конечно, сами делают и тесто, и жарят блинчики, и пекут, и мешают и многое другое.
-                </p>
-                <p>
-                    Мы рисуем и творим — даём волю фантазии, а у детей она развита на все 200%! Используем разные техники рисования и делаем удивительные поделки — и всё это тоже на английском!
-                </p>
-                <p>
-                    Каждая неделя тематическая — мы «летаем в космос» и «погружаемся на морское дно», а можем даже «зайти в логово зверей».
-                </p>
-                <p>
-                    Три дня в неделю — понедельник, среда и пятница с 9.00 до 12.00 ждём ваших чудесных деток! (При наборе группы — каждый день)
-                </p>
-                <app-divider />
-                <img 
-                    :src="require('@/assets/img/jpg/english/part-time/gallery_1.jpg')"  
-                    alt="photo"
-                    class="img-about img-about-1"
-                > 
-                <app-divider />
-
-                <h1>СТОИМОСТЬ</h1>
-
-                <ul class="price-list">
-                    <li class="price-item">
-                        <div class="item-name">
-                            1 занятие
-                        </div>
-                        <div class="dots"></div>
-                        <div class="item-price">
-                            600.00р
-                        </div>
-                    </li>
-                </ul> 
-  
-                <div class="wrap-btn">
-                    <div class="btn btn-pulsing">
-                        <div class="title">
-                            ЗАПИСАТЬСЯ
-                        </div>
-                        <div class="close">
-                            х
-                        </div>                
-                    </div>
-                </div> 
-            </main>       
-        </section>
     </div>
 </template>
 
 <script>
+import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
 
 export default {
     name: 'EnglishTheater',
     components: { 
+        AppSlider,
         AppDivider,
         AppHeader 
     },
@@ -117,6 +118,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.part-time {
+    padding: 0 14px;
+}
 .wrap-btn {
     height: 64px;
     position: relative;  
@@ -137,14 +142,22 @@ export default {
     color: white;
     box-shadow: 2px 3px 6px 1px rgba(95, 95, 95, 0.5);
     cursor: pointer;
+    @media (max-width: $mobile-max) {
+        left: 3%;
+        width: 94%;
+    }    
 }
-.btn-trigger {
-    transition: all 0.2s;   
+.btn-trigger {  
+    transition: all 0.2s ease-in-out; 
     &:hover {
         margin-left: -16px;
         width: calc(100% + 32px);
-        height: 64px;        
-    }
+        height: 64px; 
+        @media (max-width: $mobile-max) {
+            margin-left: -16px;
+            width: calc(94% + 32px);
+        }                 
+    } 
 }
 .btn-pulsing {
     animation: pulsing;
@@ -168,6 +181,25 @@ export default {
         height: 62px;
     }
 }
+@media (max-width: $mobile-max) {
+    @keyframes pulsing {
+        10% {
+            margin-left: -16px;
+            width: calc(90% + 32px);
+            height: 64px;        
+        }
+        30% {
+            margin-left: 0;
+            width: 90%;
+            height: 62px;        
+        }
+        100% {
+            margin-left: 0;
+            margin-right: 0;
+            height: 62px;        
+        }
+    }
+} 
 
 .section-panel {
     display: flex;
@@ -180,7 +212,7 @@ export default {
     border-right: 2px solid $lilac;
     border-bottom: 1px solid lightgrey;
     border-radius: 42px 42px 0 0;
-    .close {
+    .close {      
         padding: 5px;
         cursor: pointer;
     }
@@ -196,7 +228,7 @@ export default {
     border-radius: 0 0 42px 42px;
     padding: 0 16px;
     max-height: 0;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.3s ease-in-out;
     transform: translateY(-100%);
     &.collapsible {
         transform: translateY(0%);

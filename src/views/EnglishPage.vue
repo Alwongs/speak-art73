@@ -12,7 +12,7 @@
             ‌Мы рады видеть на занятиях детей от 3 до 18 лет. Все уроки проходят  в небольших группах по 4−5 детей. Для малышей дошкольного возраста уроки длятся по 30 минут, для школьников по 40−60 минут. Вы можете выбрать удобный для вас формат занятий: «театр» или группу неполного дня.
         </p>
         
-        <english-slider :data="$store.getters.slider_english" />
+        <app-slider :data="$store.getters.slider_english" />
         <app-divider />
 
         <theater-group/> 
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import EnglishSlider from '@/components/english/EnglishSlider.vue'
+import AppSlider from '@/components/app/AppSlider.vue'
 import TheaterGroup from '@/components/english/TheaterGroup.vue'
 import PartTime from '@/components/english/PartTime.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
@@ -30,7 +30,7 @@ import AppDivider from '@/components/app/AppDivider.vue'
 export default {
     name: 'EnglishPage', 
     components: { 
-        EnglishSlider,
+        AppSlider,
         TheaterGroup,
         PartTime,
         AppDivider
@@ -43,7 +43,10 @@ export default {
 .img-english {
     width: 100%;
     border-radius: 5px;
-    margin-bottom: 16px;    
+    margin-bottom: 16px; 
+    @media (max-width: $mobile-max) {
+        border-radius: 0;
+    }    
 }
 p {
     line-height: 22px;

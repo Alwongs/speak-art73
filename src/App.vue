@@ -29,17 +29,17 @@ export default {
 <style lang="scss" scoped>
 
 .app-container {
-    width: 60vw;
+    width: 830px;
     margin: 0 auto;
     padding-top: 64px;
     @media (min-width: $desktop-min) and (max-width: $desktop-max) {
-        width: 70vw;
+        width: 700px;
     }     
     @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-        width: 80vw;
+        width: 630px;
     }      
     @media (max-width: $mobile-max) {
-        width: 95vw;
+        width: 100%;
     } 
 }
 </style>

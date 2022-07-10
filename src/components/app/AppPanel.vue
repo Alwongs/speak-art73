@@ -4,12 +4,11 @@
             <div 
                 class="header-link home-link"
                 @click="goTo('/')"
-            >
-                Home
-            </div>
-            <div class="header-link nav-links" @click="toggleMenu">
-                Menu
-            </div>
+            ></div>
+            <div 
+                class="header-link nav-link" 
+                @click="toggleMenu"
+            ></div>
         </div>
     </header>
 </template>
@@ -46,16 +45,16 @@ export default {
 .container {
     position: relative;
     height: 100%;
-    width: 60vw;
+    width: 50vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     @media (min-width: 1024px) and (max-width: 1440px) {
-        width: 70vw;
+        width: 60vw;
     }     
     @media (min-width: 768px) and (max-width: 1024px) {
-        width: 80vw;
+        width: 85vw;
     }      
     @media (max-width: 768px) {
         width: 95vw;
@@ -63,6 +62,19 @@ export default {
 }
 .header-link  {
     cursor: pointer;
+    &.home-link {
+        background-image: url('../../assets/img/svg/home.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 32px;
+        height: 32px;     
+    }
+    &.nav-link {
+        background-image: url('../../assets/img/svg/menu_btn.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 32px;
+        height: 32px;        
+    }
 }
-
 </style>

@@ -1,12 +1,12 @@
 <template>
     <app-divider /> 
     <footer>  
-        <p>
+        <p class="adress">
             Обучение проходит в комфортной обстановке в мини-группах до 8 человек по адресу: г. Ульяновск, ул. Льва Толстого, д. 22                
         </p>         
         <social-media /> 
         <a href="#top" class="arrow-up"></a>            
-        <p>Сделано дома &#129322;</p>            
+        <p class="copyright">Сделано дома &#129322;</p>            
     </footer>  
 </template>
 
@@ -40,5 +40,11 @@ footer {
     p {
         margin-bottom: 32px;
     }  
+    .adress {
+        font-size: 14px;
+    }
+    .copyright {
+        font-size: 12px;
+    }
 }
 </style>

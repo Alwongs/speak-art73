@@ -30,7 +30,7 @@
 import ImageGroup from './ImageGroup.vue';
 
 export default {
-    name: 'HomeSlider',
+    name: 'AppSlider',
     props: ['data'],
     components: { ImageGroup },
     data() {
@@ -87,6 +87,10 @@ export default {
     position: relative;
     overflow: hidden;
     margin-bottom: 32px;
+    @media (max-width: $mobile-max) {
+        border-radius: 0;
+        padding: 0 16px;
+    }     
 }
 .slider-footer {
     position: absolute;

@@ -1,122 +1,123 @@
 <template>
-    <div 
-        v-if="!isBlockOpen" 
-        class="wrap-btn" 
-        @click="toggleBlock"
-    >
-        <div class="btn btn-trigger">
+    <div class="theater-group">
+        <div 
+            v-if="!isBlockOpen" 
+            class="wrap-btn" 
+            @click="toggleBlock"
+        >
+            <div class="btn btn-trigger">
+                <div class="title">
+                    ТЕАТР
+                </div>
+                <div class="close">
+                    &#9660;
+                </div>                
+            </div>
+        </div>
+        <div 
+            v-else  
+            class="section-panel"
+        >
             <div class="title">
                 ТЕАТР
             </div>
-            <div class="close">
-                х
-            </div>                
+            <div 
+                class="close" 
+                @click="toggleBlock"
+            >
+                &#9650;
+            </div>
         </div>
-    </div>
 
-    <div 
-        v-else  
-        class="section-panel"
-    >
-        <div class="title">
-            ТЕАТР
+        <div class="wrap-section">
+            <section 
+                :class="{ collapsible: isBlockOpen }"
+                class="section"
+            >
+                <app-header />
+                <main>
+                    <img 
+                        :src="require('@/assets/img/jpg/english/theater/001.jpg')"  
+                        alt="photo"
+                        class="img-about img-about-1"
+                    >
+                    <p>
+                        Каждый праздник — как произведение искусства! А точнее спектакль на небольшой сцене.             
+                    </p>
+                    <p>
+                        Занятия строятся таким образом, чтобы к моменту репетиции и раздачи сценария дети уже знали большую часть не только своих, но и других ролей. 
+                    </p>
+                    <p>
+                        На занятиях мы примеряем разные образы и учимся вживаться в роль.
+                    </p>
+                    <p>
+                        Мы даём волю фантазии, переделывая известные сказки.
+                    </p>
+                    <p>
+                        Мы учимся выступать публично и учимся преодолевать свои страхи и стеснение. Мы придумываем костюмы и реквизит. В создании спектакля участвуют и дети и их родители. Такой союз делает наши спектакли более душевными и тёплыми!
+                    </p>
+                    <p>
+                        Изучаем грамматику без упражнений и учим слова без зубрёжки. Сразу применяя знания на деле.
+                    </p>
+                    <app-divider />
+                    
+                    <app-slider :data="$store.getters.slider_english_theater" />
+                    <app-divider />
+
+                    <h1>СТОИМОСТЬ</h1>
+                    <h1>‌(продолжительность занятия 90 минут)</h1>
+
+                    <ul class="price-list">
+                        <li class="price-item">
+                            <div class="item-name">
+                                1 занятие
+                            </div>
+                            <div class="dots"></div>
+                            <div class="item-price">
+                                700.00р
+                            </div>
+                        </li>
+                    </ul> 
+
+                    <ul class="conditional-list">
+                        <li>
+                            Занятия проходят 2 раза в неделю
+                        </li>
+                        <li>
+                            Возраст: от 7 до 11 лет 
+                        </li>
+                        <li>
+                            Дети младше или старше — по запросу
+                        </li>
+                        <li>
+                            В группу можно попасть в любой момент.
+                        </li>
+                    </ul>  
+                    <div class="wrap-btn">
+                        <div class="btn btn-pulsing">
+                            <div class="title">
+                                ЗАПИСАТЬСЯ
+                            </div>
+                            <div class="close">
+                                &#9658;
+                            </div>                
+                        </div>
+                    </div>                  
+                </main>       
+            </section>
         </div>
-        <div 
-            class="close" 
-            @click="toggleBlock"
-        >
-            х
-        </div>
-    </div>
-
-    <div class="wrap-section">
-        <section 
-            :class="{ collapsible: isBlockOpen }"
-            class="section"
-        >
-            <app-header />
-            <main>
-                <img 
-                    :src="require('@/assets/img/jpg/english/theater/001.jpg')"  
-                    alt="photo"
-                    class="img-about img-about-1"
-                >
-                <p>
-                    Каждый праздник — как произведение искусства! А точнее спектакль на небольшой сцене.             
-                </p>
-                <p>
-                    Занятия строятся таким образом, чтобы к моменту репетиции и раздачи сценария дети уже знали большую часть не только своих, но и других ролей. 
-                </p>
-                <p>
-                    На занятиях мы примеряем разные образы и учимся вживаться в роль.
-                </p>
-                <p>
-                    Мы даём волю фантазии, переделывая известные сказки.
-                </p>
-                <p>
-                    Мы учимся выступать публично и учимся преодолевать свои страхи и стеснение. Мы придумываем костюмы и реквизит. В создании спектакля участвуют и дети и их родители. Такой союз делает наши спектакли более душевными и тёплыми!
-                </p>
-                <p>
-                    Изучаем грамматику без упражнений и учим слова без зубрёжки. Сразу применяя знания на деле.
-                </p>
-                <app-divider />
-                
-                <english-slider :data="$store.getters.slider_english_theater" />
-                <app-divider />
-
-                <h1>СТОИМОСТЬ</h1>
-                <h1>‌(продолжительность занятия 90 минут)</h1>
-
-                <ul class="price-list">
-                    <li class="price-item">
-                        <div class="item-name">
-                            1 занятие
-                        </div>
-                        <div class="dots"></div>
-                        <div class="item-price">
-                            700.00р
-                        </div>
-                    </li>
-                </ul> 
-
-                <ul class="conditional-list">
-                    <li>
-                        Занятия проходят 2 раза в неделю
-                    </li>
-                    <li>
-                        Возраст: от 7 до 11 лет 
-                    </li>
-                    <li>
-                        Дети младше или старше — по запросу
-                    </li>
-                    <li>
-                        В группу можно попасть в любой момент.
-                    </li>
-                </ul>  
-                <div class="wrap-btn">
-                    <div class="btn btn-pulsing">
-                        <div class="title">
-                            ЗАПИСАТЬСЯ
-                        </div>
-                        <div class="close">
-                            х
-                        </div>                
-                    </div>
-                </div>                  
-            </main>       
-        </section>
     </div>
 </template>
 
 <script>
-import EnglishSlider from '@/components/english/EnglishSlider.vue'
+import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
 
 export default {
     name: 'TheaterGroup',
     components: { 
-        EnglishSlider,
+        AppSlider,
         AppDivider,
         AppHeader 
     },
@@ -134,6 +135,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.theater-group {
+    padding: 0 14px;
+}
 .wrap-btn {
     height: 64px;
     position: relative;  
@@ -154,15 +159,24 @@ export default {
     color: white;
     box-shadow: 2px 3px 6px 1px rgba(95, 95, 95, 0.5);
     cursor: pointer;
+    @media (max-width: $mobile-max) {
+        left: 3%;
+        width: 94%;
+    }     
 }
-.btn-trigger {
-    transition: all 0.2s;   
+.btn-trigger { 
+    transition: all 0.2s ease-in-out; 
     &:hover {
         margin-left: -16px;
         width: calc(100% + 32px);
-        height: 64px;        
+        height: 64px;
+        @media (max-width: $mobile-max) {
+            margin-left: -16px;
+            width: calc(94% + 32px);
+        }                 
     }
 }
+
 .btn-pulsing {
     animation: pulsing;
     animation-duration: 2s;
@@ -172,19 +186,38 @@ export default {
     10% {
         margin-left: -16px;
         width: calc(100% + 32px);
-        height: 64px;
+        height: 64px;        
     }
     30% {
         margin-left: 0;
         width: 100%;
-        height: 62px;
+        height: 62px;        
     }
     100% {
         margin-left: 0;
         margin-right: 0;
-        height: 62px;
+        height: 62px;        
     }
 }
+@media (max-width: $mobile-max) {
+    @keyframes pulsing {
+        10% {
+            margin-left: -16px;
+            width: calc(90% + 32px);
+            height: 64px;        
+        }
+        30% {
+            margin-left: 0;
+            width: 90%;
+            height: 62px;        
+        }
+        100% {
+            margin-left: 0;
+            margin-right: 0;
+            height: 62px;        
+        }
+    }
+} 
 .section-panel {
     display: flex;
     justify-content: space-between;
@@ -196,7 +229,7 @@ export default {
     border-right: 2px solid $lilac;
     border-bottom: 1px solid lightgrey;
     border-radius: 42px 42px 0 0;
-    .close {
+    .close {       
         padding: 5px;
         cursor: pointer;
     }
@@ -212,7 +245,7 @@ export default {
     border-radius: 0 0 42px 42px;
     padding: 0 16px;
     max-height: 0;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.3s ease-in-out;
     transform: translateY(-100%);
     &.collapsible {
         transform: translateY(0%);

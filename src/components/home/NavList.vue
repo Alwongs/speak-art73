@@ -17,7 +17,7 @@
         </li>
         <li class="nav-item">
             <button class="lang-btn green" @click.prevent="goTo('theme-intensives')">
-                ТЕМАТИЧЕСКИЕ ИНТЕНСИВЫ             
+                ТЕМАТИЧЕСКИЕ ИНТЕНСИВЫ          
             </button>                     
         </li>                
         <li class="nav-item">
