@@ -1,21 +1,11 @@
 import { createStore } from 'vuex'
+import slider from './modules/slider.js'
+import app from './modules/app.js'
 
 export default createStore({
-    getters: {
-        isMenuActive(state) {
-            return state.isMenuActive
-        }
-    },
-    state: {
-        isMenuActive: false
-    },
-    mutations: {
-        TOGGLE_MENU(state) {
-            state.isMenuActive = !state.isMenuActive
-        }
-    },
-    actions: {
-    },
+
     modules: {
+        app,
+        slider
     }
 })

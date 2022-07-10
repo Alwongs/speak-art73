@@ -60,11 +60,8 @@
                     Изучаем грамматику без упражнений и учим слова без зубрёжки. Сразу применяя знания на деле.
                 </p>
                 <app-divider />
-                <img 
-                    :src="require('@/assets/img/jpg/english/theater/gallery_1.jpg')"  
-                    alt="photo"
-                    class="img-about img-about-1"
-                > 
+                
+                <english-slider :data="$store.getters.slider_english_theater" />
                 <app-divider />
 
                 <h1>СТОИМОСТЬ</h1>
@@ -112,12 +109,14 @@
 </template>
 
 <script>
+import EnglishSlider from '@/components/english/EnglishSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
 
 export default {
     name: 'TheaterGroup',
     components: { 
+        EnglishSlider,
         AppDivider,
         AppHeader 
     },
@@ -125,12 +124,12 @@ export default {
         return {
             isBlockOpen: false
         }
-    },
-    methods: {
+    },      
+    methods: {         
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
         }       
-    },
+    }, 
 }
 </script>
 
@@ -186,7 +185,6 @@ export default {
         height: 62px;
     }
 }
-
 .section-panel {
     display: flex;
     justify-content: space-between;
@@ -222,8 +220,6 @@ export default {
         margin-bottom: 32px;
     }
 }
-
-
 .img-about {
     width: 100%;
     border-radius: 5px;

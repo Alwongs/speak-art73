@@ -88,7 +88,6 @@
                         </div>                
                     </div>
                 </div> 
-
             </main>       
         </section>
     </div>
@@ -121,7 +120,7 @@ export default {
 .wrap-btn {
     height: 64px;
     position: relative;  
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 .btn {
     position: absolute;
