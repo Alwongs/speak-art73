@@ -30,6 +30,10 @@ export default {
         toggleSlide() {
             this.$emit('toggleSlide');
         }
+    },
+    created() {
+        
+        console.log(this.data)
     }
 }
 </script>

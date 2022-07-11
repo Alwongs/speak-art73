@@ -39,7 +39,7 @@ export default {
     components: {
         AppDivider,
         NavList
-    }
+    },
 }
 </script>
 
