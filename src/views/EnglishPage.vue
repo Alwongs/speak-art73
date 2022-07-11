@@ -12,7 +12,10 @@
             ‌Мы рады видеть на занятиях детей от 3 до 18 лет. Все уроки проходят  в небольших группах по 4−5 детей. Для малышей дошкольного возраста уроки длятся по 30 минут, для школьников по 40−60 минут. Вы можете выбрать удобный для вас формат занятий: «театр» или группу неполного дня.
         </p>
         
-        <app-slider :data="$store.getters.slider_english" />
+        <app-slider 
+            :data="$store.getters.slider_english" 
+            :isAutoSlider="true"
+        />
         <app-divider />
 
         <theater-group/> 
@@ -51,5 +54,8 @@ export default {
 p {
     line-height: 22px;
     margin-bottom: 16px;
+    @media (max-width: $mobile-max) {
+        padding: 0 16px;
+    }      
 }
 </style>

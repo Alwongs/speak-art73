@@ -3,7 +3,8 @@
         <image-group
             :data="data"
             :current_index="current_index" 
-            @toggleSlide="toggleSlide"/>
+            @toggleSlide="toggleSlide"
+        />
         <div class="slider-footer">
             <div class="dots-group">
                 <div
@@ -31,7 +32,7 @@ import ImageGroup from './ImageGroup.vue';
 
 export default {
     name: 'AppSlider',
-    props: ['data'],
+    props: ['data', 'isAutoSlider'],
     components: { ImageGroup },
     data() {
         return {
@@ -74,7 +75,9 @@ export default {
         }        
     },
     created() {
-        this.startSlide();
+        if (this.isAutoSlider) {
+            this.startSlide();
+        }
     }
 }
 </script>

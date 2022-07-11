@@ -56,7 +56,9 @@ export default {
 p {
     font-size: 18px;
     line-height: 24px;
-    padding: 0 16px;
     margin-bottom: 16px;
+    @media (max-width: $mobile-max) {
+        padding: 0 16px;
+    }     
 }
 </style>
