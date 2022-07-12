@@ -22,7 +22,7 @@
 
         <app-slider 
             :data="$store.getters.slider_chinese" 
-            :isAutoSlider="true"            
+            :isAutoSlider="false"            
         />
 
 

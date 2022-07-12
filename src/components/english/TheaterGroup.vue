@@ -2,10 +2,10 @@
     <div class="theater-group">
         <div 
             v-if="!isBlockOpen" 
-            class="wrap-btn" 
+            class="wrap-btn1" 
             @click="toggleBlock"
         >
-            <div class="btn btn-trigger">
+            <div class="btn1 btn-trigger1">
                 <div class="title">
                     ТЕАТР
                 </div>
@@ -93,16 +93,7 @@
                             В группу можно попасть в любой момент.
                         </li>
                     </ul>  
-                    <div class="wrap-btn">
-                        <div class="btn btn-pulsing">
-                            <div class="title">
-                                ЗАПИСАТЬСЯ
-                            </div>
-                            <div class="close">
-                                &#9658;
-                            </div>                
-                        </div>
-                    </div>                  
+                    <app-button :text="'ЗАПИСАТЬСЯ'"/>                 
                 </main>       
             </section>
         </div>
@@ -110,6 +101,7 @@
 </template>
 
 <script>
+import AppButton from '@/components/app/AppButton.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
@@ -117,6 +109,7 @@ import AppHeader from '@/components/app/AppHeader.vue'
 export default {
     name: 'TheaterGroup',
     components: { 
+        AppButton,
         AppSlider,
         AppDivider,
         AppHeader 
@@ -139,12 +132,12 @@ export default {
 .theater-group {
     padding: 0 14px;
 }
-.wrap-btn {
+.wrap-btn1 {
     height: 64px;
     position: relative;  
     margin-bottom: 16px;
 }
-.btn {
+.btn1 {
     position: absolute;
     top: 0;
     left: 0;  
@@ -164,7 +157,7 @@ export default {
         width: 94%;
     }     
 }
-.btn-trigger { 
+.btn-trigger1 { 
     transition: all 0.2s ease-in-out; 
     &:hover {
         margin-left: -16px;
@@ -176,48 +169,6 @@ export default {
         }                 
     }
 }
-
-.btn-pulsing {
-    animation: pulsing;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;    
-}
-@keyframes pulsing {
-    10% {
-        margin-left: -16px;
-        width: calc(100% + 32px);
-        height: 64px;        
-    }
-    30% {
-        margin-left: 0;
-        width: 100%;
-        height: 62px;        
-    }
-    100% {
-        margin-left: 0;
-        margin-right: 0;
-        height: 62px;        
-    }
-}
-@media (max-width: $mobile-max) {
-    @keyframes pulsing {
-        10% {
-            margin-left: -16px;
-            width: calc(90% + 32px);
-            height: 64px;        
-        }
-        30% {
-            margin-left: 0;
-            width: 90%;
-            height: 62px;        
-        }
-        100% {
-            margin-left: 0;
-            margin-right: 0;
-            height: 62px;        
-        }
-    }
-} 
 .section-panel {
     display: flex;
     justify-content: space-between;

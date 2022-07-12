@@ -14,7 +14,7 @@
         
         <app-slider 
             :data="$store.getters.slider_english" 
-            :isAutoSlider="true"
+            :isAutoSlider="false"
         />
         <app-divider />
 

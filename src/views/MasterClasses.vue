@@ -21,10 +21,15 @@
             Продолжительность: от полутра до двух часов
         </p>
 
-        <h2 style="color: red;">Слайдер пока снглийский ))</h2>
+        <h4 
+            style="color: red;"
+            class="mb-16"
+        >
+            Уже Китайский, но глючит. Меньше 4х фоток не понимает. Надо разбираться ))
+        </h4>
         <app-slider 
-            :data="$store.getters.slider_english" 
-            :isAutoSlider="true"
+            :data="$store.getters.master_classes" 
+            :isAutoSlider="false"
         />
         <app-divider />
     </main>   
@@ -55,7 +60,7 @@ export default {
 }
 .master-classes-list {
     list-style: disc;
-    padding-left: 16px;
+    padding-left: 32px;
     li {
         line-height: 22px;
     }

@@ -12,6 +12,9 @@ export default {
         slider_chinese(state) {
             return state.slider_chinese;
         },
+        master_classes(state) {
+            return state.master_classes;
+        },
     },
     state: {
 
@@ -53,6 +56,12 @@ export default {
             { id: 3, img: 'chinese/gallery_3.jpg'},
             { id: 4, img: 'chinese/gallery_4.jpg'},
             { id: 5, img: 'chinese/gallery_5.jpg'},
-        ]
+        ],
+
+        master_classes: [
+            { id: 1, img: 'master-classes/gallery_1.jpg'},
+            { id: 2, img: 'master-classes/gallery_2.jpg'},
+            { id: 3, img: 'master-classes/gallery_3.jpg'},
+        ],
     }
 }
