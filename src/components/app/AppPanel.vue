@@ -45,19 +45,20 @@ export default {
 .container {
     position: relative;
     height: 100%;
-    width: 50vw;
+    width: 830px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     @media (min-width: 1024px) and (max-width: 1440px) {
-        width: 60vw;
+        width: 730px;
     }     
     @media (min-width: 768px) and (max-width: 1024px) {
-        width: 85vw;
+        width: 630px;
     }      
     @media (max-width: 768px) {
-        width: 95vw;
+        padding: 0 16px;
+        width: 100%;
     } 
 }
 .header-link  {
