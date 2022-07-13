@@ -4,23 +4,14 @@
             v-if="!isBlockOpen" 
             :text="'ГРУППА НЕПОЛНОГО ДНЯ'" 
             :trigger="true"
+            :arrow="'&#9660;'"
             @click="toggleBlock"            
         />
-
-        <div 
-            v-else  
-            class="section-panel"
-        >
-            <div class="title">
-                ГРУППА НЕПОЛНОГО ДНЯ
-            </div>
-            <div 
-                class="close" 
-                @click="toggleBlock"
-            >
-                &#9650;
-            </div>
-        </div>
+        <section-panel 
+            v-else 
+            :text="'ГРУППА НЕПОЛНОГО ДНЯ'"
+            @click="toggleBlock"
+        />
 
         <div class="wrap-section">
             <section 
@@ -50,6 +41,7 @@
                         Три дня в неделю — понедельник, среда и пятница с 9.00 до 12.00 ждём ваших чудесных деток! (При наборе группы — каждый день)
                     </p>
                     <app-divider />
+                    
                     <app-slider :data="$store.getters.slider_english_part_time" />                
 
                     <app-divider />
@@ -68,7 +60,11 @@
                         </li>
                     </ul> 
     
-                    <app-button :text="'ЗАПИСАТЬСЯ'" :btn_pulsing="true"/>  
+                    <app-button 
+                        :text="'ЗАПИСАТЬСЯ'" 
+                        :btn_pulsing="true"
+                        :arrow="'&#9658;'" 
+                    />  
                 </main>       
             </section>
         </div>
@@ -76,18 +72,20 @@
 </template>
 
 <script>
+import AppButton from '@/components/app/AppButton.vue'
+import SectionPanel from '@/components/app/SectionPanel.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
-import AppButton from '@/components/app/AppButton.vue'
 
 export default {
     name: 'EnglishTheater',
     components: { 
+        AppButton,
+        SectionPanel,
         AppSlider,
         AppDivider,
         AppHeader,
-        AppButton 
     },
     data() {
         return {

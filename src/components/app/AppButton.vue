@@ -8,7 +8,7 @@
                 {{ text }}
             </div>
             <div class="close">
-                &#9658;
+                {{ arrow }}
             </div>                
         </div>
     </div>    
@@ -18,7 +18,7 @@
 
 export default {
     name: 'AppButton',
-    props: [ 'text', 'btn_pulsing', 'trigger']
+    props: [ 'text', 'btn_pulsing', 'trigger', 'arrow']
 }
 </script>
 

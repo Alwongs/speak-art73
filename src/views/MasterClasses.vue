@@ -5,7 +5,7 @@
             alt="photo"
             class="img-english"
         >
-        <ul class="master-classes-list mb-16">
+        <ul class="dotted-list mb-16">
             <li>Кулинарные</li>
             <li>Творческие</li>
             <li>Театральные</li>
@@ -31,19 +31,24 @@
             :data="$store.getters.master_classes" 
             :isAutoSlider="false"
         />
-        <app-divider />
+
+        <app-button 
+            :text="'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ'" 
+            :btn_pulsing="true"
+            :arrow="'&#9658;'" 
+        />        
     </main>   
 </template>
 
 <script>
+import AppButton from '@/components/app/AppButton.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
-import AppDivider from '@/components/app/AppDivider.vue'
 
 export default {
     name: 'EnglishPage', 
-    components: { 
+    components: {
+        AppButton, 
         AppSlider,
-        AppDivider
     }, 
 }
 </script>
@@ -57,13 +62,6 @@ export default {
     @media (max-width: $mobile-max) {
         border-radius: 0;
     }    
-}
-.master-classes-list {
-    list-style: disc;
-    padding-left: 32px;
-    li {
-        line-height: 22px;
-    }
 }
 p {
     line-height: 22px;

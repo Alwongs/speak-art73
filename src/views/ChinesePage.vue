@@ -24,18 +24,23 @@
             :data="$store.getters.slider_chinese" 
             :isAutoSlider="false"            
         />
-
-
+        <app-button 
+            :text="'ЗАПИСАТЬСЯ НА ПРОБНОЕ ЗАНЯТИЕ'" 
+            :btn_pulsing="true"
+            :arrow="'&#9658;'" 
+        />
     </main>   
 </template>
 
 <script>
+import AppButton from '@/components/app/AppButton.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 
 export default {
     name: 'ChinesePage', 
     components: { 
+        AppButton,
         AppSlider,
         AppDivider
     }, 

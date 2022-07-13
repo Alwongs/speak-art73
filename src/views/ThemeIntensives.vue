@@ -5,15 +5,21 @@
             alt="photo"
             class="img-english"
         >
-
-        
+        <child-geography />
+        <since-school />
     </main>   
 </template>
 
 <script>
+import ChildGeography from '@/components/theme-intensives/ChildGeography.vue'
+import SinceSchool from '@/components/theme-intensives/SinceSchool.vue'
 
 export default {
-    name: 'ThemeIntensives'
+    name: 'ThemeIntensives', 
+    components: { 
+        ChildGeography, 
+        SinceSchool 
+    }   
 }
 </script>
 

@@ -4,23 +4,14 @@
             v-if="!isBlockOpen" 
             :text="'ТЕАТР'" 
             :trigger="true"
+            :arrow="'&#9660;'"
             @click="toggleBlock"
-        />          
-      
-        <div 
-            v-else  
-            class="section-panel"
-        >
-            <div class="title">
-                ТЕАТР
-            </div>
-            <div 
-                class="close" 
-                @click="toggleBlock"
-            >
-                &#9650;
-            </div>
-        </div>
+        />     
+        <section-panel 
+            v-else 
+            :text="'ТЕАТР'"
+            @click="toggleBlock"
+        />     
 
         <div class="wrap-section">
             <section 
@@ -86,7 +77,11 @@
                             В группу можно попасть в любой момент.
                         </li>
                     </ul>  
-                    <app-button :text="'ЗАПИСАТЬСЯ'" :btn_pulsing="true"/>                 
+                    <app-button 
+                        :text="'ЗАПИСАТЬСЯ'" 
+                        :btn_pulsing="true"
+                        :arrow="'&#9658;'" 
+                    />                  
                 </main>       
             </section>
         </div>
@@ -95,6 +90,7 @@
 
 <script>
 import AppButton from '@/components/app/AppButton.vue'
+import SectionPanel from '@/components/app/SectionPanel.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
@@ -103,9 +99,10 @@ export default {
     name: 'TheaterGroup',
     components: { 
         AppButton,
+        SectionPanel,
         AppSlider,
         AppDivider,
-        AppHeader 
+        AppHeader,
     },
     data() {
         return {
@@ -125,22 +122,7 @@ export default {
 .theater-group {
     padding: 0 14px;
 }
-.section-panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    height: 62px;
-    border-left: 2px solid $lilac;
-    border-top: 2px solid $lilac;
-    border-right: 2px solid $lilac;
-    border-bottom: 1px solid lightgrey;
-    border-radius: 42px 42px 0 0;
-    .close {       
-        padding: 5px;
-        cursor: pointer;
-    }
-}
+
 .wrap-section {
     height: 100%;
     overflow: hidden;
