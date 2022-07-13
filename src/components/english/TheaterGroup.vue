@@ -1,19 +1,12 @@
 <template>
     <div class="theater-group">
-        <div 
+        <app-button 
             v-if="!isBlockOpen" 
-            class="wrap-btn1" 
+            :text="'ТЕАТР'" 
+            :trigger="true"
             @click="toggleBlock"
-        >
-            <div class="btn1 btn-trigger1">
-                <div class="title">
-                    ТЕАТР
-                </div>
-                <div class="close">
-                    &#9660;
-                </div>                
-            </div>
-        </div>
+        />          
+      
         <div 
             v-else  
             class="section-panel"
@@ -93,7 +86,7 @@
                             В группу можно попасть в любой момент.
                         </li>
                     </ul>  
-                    <app-button :text="'ЗАПИСАТЬСЯ'"/>                 
+                    <app-button :text="'ЗАПИСАТЬСЯ'" :btn_pulsing="true"/>                 
                 </main>       
             </section>
         </div>
@@ -131,43 +124,6 @@ export default {
 
 .theater-group {
     padding: 0 14px;
-}
-.wrap-btn1 {
-    height: 64px;
-    position: relative;  
-    margin-bottom: 16px;
-}
-.btn1 {
-    position: absolute;
-    top: 0;
-    left: 0;  
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px;
-    height: 62px;
-    background-color: $lilac;
-    border-radius: 32px;
-    color: white;
-    box-shadow: 2px 3px 6px 1px rgba(95, 95, 95, 0.5);
-    cursor: pointer;
-    @media (max-width: $mobile-max) {
-        left: 3%;
-        width: 94%;
-    }     
-}
-.btn-trigger1 { 
-    transition: all 0.2s ease-in-out; 
-    &:hover {
-        margin-left: -16px;
-        width: calc(100% + 32px);
-        height: 64px;
-        @media (max-width: $mobile-max) {
-            margin-left: -16px;
-            width: calc(94% + 32px);
-        }                 
-    }
 }
 .section-panel {
     display: flex;

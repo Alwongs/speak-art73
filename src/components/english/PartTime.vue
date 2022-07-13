@@ -1,19 +1,11 @@
 <template>
     <div class="part-time">
-        <div 
+        <app-button 
             v-if="!isBlockOpen" 
-            class="wrap-btn" 
-            @click="toggleBlock"
-        >
-            <div class="btn btn-trigger">
-                <div class="title">
-                    ГРУППА НЕПОЛНОГО ДНЯ
-                </div>
-                <div class="close">
-                    &#9660;
-                </div>                
-            </div>
-        </div>
+            :text="'ГРУППА НЕПОЛНОГО ДНЯ'" 
+            :trigger="true"
+            @click="toggleBlock"            
+        />
 
         <div 
             v-else  
@@ -76,16 +68,7 @@
                         </li>
                     </ul> 
     
-                    <div class="wrap-btn">
-                        <div class="btn btn-pulsing">
-                            <div class="title">
-                                ЗАПИСАТЬСЯ
-                            </div>
-                            <div class="close">
-                                &#9658;
-                            </div>                
-                        </div>
-                    </div> 
+                    <app-button :text="'ЗАПИСАТЬСЯ'" :btn_pulsing="true"/>  
                 </main>       
             </section>
         </div>
@@ -96,13 +79,15 @@
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
+import AppButton from '@/components/app/AppButton.vue'
 
 export default {
     name: 'EnglishTheater',
     components: { 
         AppSlider,
         AppDivider,
-        AppHeader 
+        AppHeader,
+        AppButton 
     },
     data() {
         return {
@@ -122,85 +107,6 @@ export default {
 .part-time {
     padding: 0 14px;
 }
-.wrap-btn {
-    height: 64px;
-    position: relative;  
-    margin-bottom: 32px;
-}
-.btn {
-    position: absolute;
-    top: 0;
-    left: 0;  
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px;
-    height: 62px;
-    background-color: $lilac;
-    border-radius: 32px;
-    color: white;
-    box-shadow: 2px 3px 6px 1px rgba(95, 95, 95, 0.5);
-    cursor: pointer;
-    @media (max-width: $mobile-max) {
-        left: 3%;
-        width: 94%;
-    }    
-}
-.btn-trigger {  
-    transition: all 0.2s ease-in-out; 
-    &:hover {
-        margin-left: -16px;
-        width: calc(100% + 32px);
-        height: 64px; 
-        @media (max-width: $mobile-max) {
-            margin-left: -16px;
-            width: calc(94% + 32px);
-        }                 
-    } 
-}
-.btn-pulsing {
-    animation: pulsing;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;    
-}
-@keyframes pulsing {
-    10% {
-        margin-left: -16px;
-        width: calc(100% + 32px);
-        height: 64px;
-    }
-    30% {
-        margin-left: 0;
-        width: 100%;
-        height: 62px;
-    }
-    100% {
-        margin-left: 0;
-        margin-right: 0;
-        height: 62px;
-    }
-}
-@media (max-width: $mobile-max) {
-    @keyframes pulsing {
-        10% {
-            margin-left: -16px;
-            width: calc(90% + 32px);
-            height: 64px;        
-        }
-        30% {
-            margin-left: 0;
-            width: 90%;
-            height: 62px;        
-        }
-        100% {
-            margin-left: 0;
-            margin-right: 0;
-            height: 62px;        
-        }
-    }
-} 
-
 .section-panel {
     display: flex;
     justify-content: space-between;

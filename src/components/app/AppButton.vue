@@ -1,5 +1,8 @@
 <template>
-    <div class="wrap-btn btn-pulsing">
+    <div 
+        class="wrap-btn"
+        :class="{ 'btn-pulsing': btn_pulsing, 'trigger': trigger}"
+    >
         <div class="btn">
             <div class="title">
                 {{ text }}
@@ -15,7 +18,7 @@
 
 export default {
     name: 'AppButton',
-    props: [ 'text' ]
+    props: [ 'text', 'btn_pulsing', 'trigger']
 }
 </script>
 
@@ -54,6 +57,12 @@ export default {
     }
     100% {
         padding: 1px 16px 1px 16px;          
+    }
+}
+.trigger { 
+    transition: all 0.2s ease-in-out; 
+    &:hover {
+        padding: 0;                
     }
 }
 </style>
