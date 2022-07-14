@@ -63,7 +63,7 @@
                     <ul class="price-list">
                         <price-item 
                             :title="'1 занятие'"
-                            :price="'700.00'"
+                            :price="'5000.00'"
                         />
                     </ul> 
 

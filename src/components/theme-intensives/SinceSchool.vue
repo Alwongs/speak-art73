@@ -35,6 +35,7 @@
                         В курсе будет 5 наук:
                     </p>
 
+
                     <ul class="subject-list">
                         <li>БИОЛОГИЯ — познакомимся с насекомыми, растениями и кое-что посадим</li>
                         <li>АНАТОМИЯ — изучим органы и скелет человека. Узнаем, как работает пищеварение и сделаем забавный опыт!</li>
@@ -49,24 +50,31 @@
                     <p>
                         Продолжительность: 5 дней по 2 часа каждый день
                     </p>
-                    
-                    <app-slider :data="$store.getters.child_geography" />
-                    <app-divider />
 
-                    <h2>СТОИМОСТЬ</h2>
 
+
+                    <h2 class="align-center">СТОИМОСТЬ</h2>
                     <ul class="price-list">
                         <price-item 
                             :title="'Научная школа'"
                             :price="'5500.00'"
                         />
-                    </ul> 
-
+                    </ul>   
+                    <img 
+                        :src="require('@/assets/img/jpg/theme-intensives/since-school/002.jpg')"  
+                        alt="photo"
+                        class="img-about img-about-1"
+                    >
+                    
                     <app-button 
                         :text="'ЗАПИСАТЬСЯ'" 
                         :btn_pulsing="true"
                         :arrow="'&#9658;'" 
-                    />                  
+                    /> 
+                    <app-divider />
+
+                    <app-slider :data="$store.getters.child_geography" />
+                 
                 </main>       
             </section>
         </div>
@@ -146,5 +154,8 @@ p {
 }  
 .price-list {
     margin-bottom: 18px;         
+}
+.align-center {
+    text-align: center;
 }
 </style>
