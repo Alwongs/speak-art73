@@ -1,5 +1,5 @@
 <template>
-    <div class="theater-group">
+    <div class="sub-tub">
         <app-button 
             v-if="!isBlockOpen" 
             :text="'ДЕТСКАЯ ГЕОГРАФИЯ'" 
@@ -23,7 +23,7 @@
                     <img 
                         :src="require('@/assets/img/jpg/theme-intensives/child-geography/001.jpg')"  
                         alt="photo"
-                        class="img-about img-about-1"
+                        class="img-content"
                     >
                     <p>
                         Подходит для уже изучавших английский язык (от 4 до 6 лет и от 7 до 9 лет)             
@@ -58,7 +58,7 @@
                     <app-slider :data="$store.getters.child_geography" />
                     <app-divider />
 
-                    <h2>СТОИМОСТЬ</h2>
+                    <h2 class="text-center">СТОИМОСТЬ</h2>
 
                     <ul class="price-list">
                         <price-item 
@@ -111,9 +111,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.theater-group {
-    padding: 0 14px;
-}
 .wrap-section {
     height: 100%;
     overflow: hidden;
@@ -132,17 +129,5 @@ export default {
         max-height: 100%;
         margin-bottom: 32px;
     }
-}
-.img-about {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px;    
-}
-p {
-    line-height: 22px;
-    margin-bottom: 32px;
-}  
-.price-list {
-    margin-bottom: 18px;         
 }
 </style>

@@ -1,9 +1,9 @@
 <template>     
-    <main class="home-page">
+    <main>
         <img 
             :src="require('@/assets/img/jpg/001.jpg')"  
             alt="photo"
-            class="img-home"
+            class="img-content"
         >
         <p>
             Меня зовут Анна Седнёва и я руководитель театрально-творческого центра иностранных языков для детей и взрослых «SpeakART».
@@ -14,7 +14,7 @@
         <img 
             :src="require('@/assets/img/jpg/002.jpg')"  
             alt="photo"
-            class="img-home"
+            class="img-content"
         >     
         <app-divider />  
         <p class="mb-32">
@@ -23,7 +23,7 @@
         <img 
             :src="require('@/assets/img/png/home_skills.png')" 
             alt="logo"
-            class="img-home"
+            class="img-content"
         > 
         <app-divider />
         <nav-list />
@@ -45,20 +45,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.img-home {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px; 
-    @media (max-width: $mobile-max) {
-        border-radius: 0;
-    }    
-}
-p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 16px;
-    @media (max-width: $mobile-max) {
-        padding: 0 16px;
-    }     
-}
 </style>

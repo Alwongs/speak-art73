@@ -1,5 +1,5 @@
 <template>
-    <div class="english-page">
+    <div>
         <h1>ExcursionsPage</h1>
     </div>    
 </template>
@@ -12,7 +12,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.english-page {
-    padding: 64px;
-}
 </style>

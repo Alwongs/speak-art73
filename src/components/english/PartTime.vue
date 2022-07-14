@@ -1,5 +1,5 @@
 <template>
-    <div class="part-time">
+    <div class="sub-tub">
         <app-button 
             v-if="!isBlockOpen" 
             :text="'ГРУППА НЕПОЛНОГО ДНЯ'" 
@@ -23,7 +23,7 @@
                     <img 
                         :src="require('@/assets/img/jpg/english/part-time/001.jpg')"  
                         alt="photo"
-                        class="img-about img-about-1"
+                        class="img-content"
                     >
                     <p>
                         Мы предлагаем вашим малышам полное погружение в языковую среду.             
@@ -46,18 +46,13 @@
 
                     <app-divider />
 
-                    <h1>СТОИМОСТЬ</h1>
+                    <h2 class="text-center">СТОИМОСТЬ</h2>
 
                     <ul class="price-list">
-                        <li class="price-item">
-                            <div class="item-name">
-                                1 занятие
-                            </div>
-                            <div class="dots"></div>
-                            <div class="item-price">
-                                600.00р
-                            </div>
-                        </li>
+                        <price-item 
+                            :title="'1 занятие'"
+                            :price="'600.00'"
+                        />
                     </ul> 
     
                     <app-button 
@@ -77,6 +72,7 @@ import SectionPanel from '@/components/app/SectionPanel.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
+import PriceItem from '@/components/app/PriceItem.vue'
 
 export default {
     name: 'EnglishTheater',
@@ -86,6 +82,7 @@ export default {
         AppSlider,
         AppDivider,
         AppHeader,
+        PriceItem
     },
     data() {
         return {
@@ -102,9 +99,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.part-time {
-    padding: 0 14px;
-}
 .section-panel {
     display: flex;
     justify-content: space-between;
@@ -139,39 +133,6 @@ export default {
         max-height: 100%;
         margin-bottom: 32px;
     }
-}
-
-
-.img-about {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px;    
-}
-p {
-    line-height: 22px;
-    margin-bottom: 16px;
-}
-h1 {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400; 
-    margin-bottom: 8px;      
-}  
-.price-list {
-    margin-bottom: 18px;
-    li {
-        display: flex;
-        margin-bottom: 16px;
-    }
-    .dots {
-        flex: 1 1 auto;
-        background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
-        background-position: bottom;
-        background-size: 4px 1px;
-        background-repeat: repeat-x;
-        margin: 0 8px;
-        margin-bottom: 4px;
-    }          
 }
 .conditional-list {
     margin-bottom: 16px;

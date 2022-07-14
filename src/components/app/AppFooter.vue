@@ -5,8 +5,8 @@
             Обучение проходит в комфортной обстановке в мини-группах до 8 человек по адресу: г. Ульяновск, ул. Льва Толстого, д. 22                
         </p>         
         <social-media /> 
-        <a href="#top" class="arrow-up"></a>            
-        <p class="copyright">Сделано дома &#129322;</p>            
+        <a href="#" class="arrow-up"></a>            
+        <p class="copyright"> Сделано дома &#129322; </p>            
     </footer>  
 </template>
 
@@ -36,10 +36,7 @@ footer {
         align-self: center;
         margin: 0 auto;    
         margin-bottom: 24px; 
-    }  
-    p {
-        margin-bottom: 32px;
-    }  
+    }   
     .adress {
         font-size: 14px;
     }

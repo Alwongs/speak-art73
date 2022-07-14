@@ -18,6 +18,9 @@ export default {
         child_geography(state) {
             return state.child_geography;
         },
+        since_school(state) {
+            return state.since_school;
+        },
     },
     state: {
 
@@ -65,6 +68,7 @@ export default {
             { id: 1, img: 'master-classes/gallery_1.jpg'},
             { id: 2, img: 'master-classes/gallery_2.jpg'},
             { id: 3, img: 'master-classes/gallery_3.jpg'},
+            { id: 4, img: 'master-classes/gallery_4.jpg'},
         ],
 
         child_geography: [
@@ -77,6 +81,15 @@ export default {
             { id: 7, img: 'theme-intensives/child-geography/gallery_7.jpg' },
             { id: 8, img: 'theme-intensives/child-geography/gallery_8.jpg' },
             { id: 9, img: 'theme-intensives/child-geography/gallery_9.jpg' },            
+        ],
+
+        since_school: [
+            { id: 1, img: 'theme-intensives/since-school/gallery_1.jpg' },
+            { id: 2, img: 'theme-intensives/since-school/gallery_2.jpg' },
+            { id: 3, img: 'theme-intensives/since-school/gallery_3.jpg' },
+            { id: 4, img: 'theme-intensives/since-school/gallery_4.jpg' },
+            { id: 5, img: 'theme-intensives/since-school/gallery_5.jpg' },
+            { id: 6, img: 'theme-intensives/since-school/gallery_6.jpg' },           
         ]
     }
 }

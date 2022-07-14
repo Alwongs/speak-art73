@@ -1,9 +1,9 @@
 <template>
-    <main class="english-page">
+    <main>
         <img 
             :src="require('@/assets/img/jpg/english/001.jpg')"  
             alt="photo"
-            class="img-english"
+            class="img-content"
         >
         <p>
             В нашем творческом центре мы изучаем английский язык в форме игры. Благодаря такой методике, дети учатся применять полученные знания сразу на практике и лучше усваивают их. На занятия они полностью погружаются в привычную игровую среду, поэтому учеба становится интереснее и приятнее.
@@ -43,19 +43,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.img-english {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px; 
-    @media (max-width: $mobile-max) {
-        border-radius: 0;
-    }    
-}
-p {
-    line-height: 22px;
-    margin-bottom: 16px;
-    @media (max-width: $mobile-max) {
-        padding: 0 16px;
-    }      
-}
 </style>

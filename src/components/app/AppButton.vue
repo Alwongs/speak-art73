@@ -28,7 +28,7 @@ export default {
     border-radius: 24px;
     height: 64px;
     padding: 1px 16px 1px 16px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
 .btn {
     width: 100%;

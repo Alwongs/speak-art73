@@ -1,9 +1,9 @@
 <template>
-    <main class="chinese-page">
+    <main>
         <img 
             :src="require('@/assets/img/jpg/chinese/001.jpg')"  
             alt="photo"
-            class="img-chinese"
+            class="img-content"
         >
         <p style="color:red;">
             текста пока нетююю :(
@@ -12,7 +12,7 @@
         <img 
             :src="require('@/assets/img/jpg/chinese/002.jpg')"  
             alt="photo"
-            class="img-chinese"
+            class="img-content"
         >
 
         <p style="color:red;">‌
@@ -49,25 +49,5 @@ export default {
 
 <style lang="scss" scoped>
 
-.img-chinese {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px; 
-    @media (max-width: $mobile-max) {
-        border-radius: 0;
-    }    
-}
-h1 {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    padding-bottom: 16px;       
-}
-p {
-    line-height: 22px;
-    margin-bottom: 16px;
-    @media (max-width: $mobile-max) {
-        padding: 0 16px;
-    }      
-}
+
 </style>

@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 
-li {
+.price-item {
     display: flex;
     margin-bottom: 16px;
 }

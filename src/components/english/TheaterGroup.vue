@@ -1,5 +1,5 @@
 <template>
-    <div class="theater-group">
+    <div class="sub-tub">
         <app-button 
             v-if="!isBlockOpen" 
             :text="'ТЕАТР'" 
@@ -23,7 +23,7 @@
                     <img 
                         :src="require('@/assets/img/jpg/english/theater/001.jpg')"  
                         alt="photo"
-                        class="img-about img-about-1"
+                        class="img-content"
                     >
                     <p>
                         Каждый праздник — как произведение искусства! А точнее спектакль на небольшой сцене.             
@@ -48,19 +48,14 @@
                     <app-slider :data="$store.getters.slider_english_theater" />
                     <app-divider />
 
-                    <h1>СТОИМОСТЬ</h1>
-                    <h1>‌(продолжительность занятия 90 минут)</h1>
+                    <h2 class="text-center">СТОИМОСТЬ</h2>
+                    <p class="text-center">‌(продолжительность занятия 90 минут)</p>
 
                     <ul class="price-list">
-                        <li class="price-item">
-                            <div class="item-name">
-                                1 занятие
-                            </div>
-                            <div class="dots"></div>
-                            <div class="item-price">
-                                700.00р
-                            </div>
-                        </li>
+                        <price-item 
+                            :title="'1 занятие'"
+                            :price="'700.00'"
+                        />
                     </ul> 
 
                     <ul class="conditional-list">
@@ -94,6 +89,7 @@ import SectionPanel from '@/components/app/SectionPanel.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
+import PriceItem from '@/components/app/PriceItem.vue'
 
 export default {
     name: 'TheaterGroup',
@@ -103,6 +99,7 @@ export default {
         AppSlider,
         AppDivider,
         AppHeader,
+        PriceItem
     },
     data() {
         return {
@@ -119,10 +116,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.theater-group {
-    padding: 0 14px;
-}
-
 .wrap-section {
     height: 100%;
     overflow: hidden;
@@ -136,45 +129,20 @@ export default {
     max-height: 0;
     transition: all 0.3s ease-in-out;
     transform: translateY(-100%);
+    @media (max-width: $mobile-max) {
+        padding: 0;
+    }     
     &.collapsible {
         transform: translateY(0%);
         max-height: 100%;
         margin-bottom: 32px;
     }
-}
-.img-about {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px;    
-}
-p {
-    line-height: 22px;
-    margin-bottom: 16px;
-}
-h1 {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400; 
-    margin-bottom: 8px;      
 }  
-.price-list {
-    margin-bottom: 18px;
-    li {
-        display: flex;
-        margin-bottom: 16px;
-    }
-    .dots {
-        flex: 1 1 auto;
-        background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
-        background-position: bottom;
-        background-size: 4px 1px;
-        background-repeat: repeat-x;
-        margin: 0 8px;
-        margin-bottom: 4px;
-    }          
-}
 .conditional-list {
     margin-bottom: 16px;
+    @media (max-width: $mobile-max) {
+        padding: 0 16px;
+    }  
     li {
         margin-bottom: 5px;
     }          

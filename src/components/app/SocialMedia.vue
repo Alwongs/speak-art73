@@ -24,7 +24,6 @@ export default {
 .social-media-links {
     display: flex;
     justify-content: center;
-    margin-top: -16px;
     margin-bottom: 32px;
     li {
         width: 58px;

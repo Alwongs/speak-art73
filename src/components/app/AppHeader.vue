@@ -30,10 +30,5 @@ export default {
         padding: 10px;
         margin-bottom: 16px;
     }
-    h1 {
-        text-align: center;
-        font-size: 18px;
-        font-weight: 400;       
-    }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="theater-group">
+    <div class="sub-tub">
         <app-button 
             v-if="!isBlockOpen" 
             :text="'НАУЧНАЯ ШКОЛА'" 
@@ -9,7 +9,7 @@
         />     
         <section-panel 
             v-else 
-            :text="'ДЕТСКАЯ ГЕОГРАФИЯ'"
+            :text="'НАУЧНАЯ ШКОЛА'"
             @click="toggleBlock"
         />     
 
@@ -23,7 +23,7 @@
                     <img 
                         :src="require('@/assets/img/jpg/theme-intensives/since-school/001.png')"  
                         alt="photo"
-                        class="img-about img-about-1"
+                        class="img-content"
                     >
                     <p>
                         Подходит для уже изучавших английский язык: от 4 до 6(7) лет             
@@ -53,7 +53,7 @@
 
 
 
-                    <h2 class="align-center">СТОИМОСТЬ</h2>
+                    <h2 class="text-center">СТОИМОСТЬ</h2>
                     <ul class="price-list">
                         <price-item 
                             :title="'Научная школа'"
@@ -63,7 +63,7 @@
                     <img 
                         :src="require('@/assets/img/jpg/theme-intensives/since-school/002.jpg')"  
                         alt="photo"
-                        class="img-about img-about-1"
+                        class="img-content"
                     >
                     
                     <app-button 
@@ -73,8 +73,7 @@
                     /> 
                     <app-divider />
 
-                    <app-slider :data="$store.getters.child_geography" />
-                 
+                    <app-slider :data="$store.getters.since_school" />
                 </main>       
             </section>
         </div>
@@ -136,26 +135,11 @@ export default {
         margin-bottom: 32px;
     }
 }
-.img-about {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px;    
-}
 .subject-list {
     margin-bottom: 16px;
     li {
         margin-bottom: 16px;
             line-height: 22px;
     }          
-}
-p {
-    line-height: 24px;
-    margin-bottom: 32px;
-}  
-.price-list {
-    margin-bottom: 18px;         
-}
-.align-center {
-    text-align: center;
-}
+} 
 </style>

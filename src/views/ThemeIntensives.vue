@@ -1,50 +1,31 @@
 <template>
-    <main class="english-page">
+    <main>
         <img 
             :src="require('@/assets/img/jpg/theme-intensives/001.jpg')"  
             alt="photo"
-            class="img-english"
+            class="img-content"
         >
         <child-geography />
         <since-school />
+        <the-exursions />
     </main>   
 </template>
 
 <script>
 import ChildGeography from '@/components/theme-intensives/ChildGeography.vue'
 import SinceSchool from '@/components/theme-intensives/SinceSchool.vue'
+import TheExursions from '@/components/theme-intensives/TheExursions.vue'
 
 export default {
     name: 'ThemeIntensives', 
     components: { 
         ChildGeography, 
-        SinceSchool 
+        SinceSchool,
+        TheExursions 
     }   
 }
 </script>
 
 <style lang="scss" scoped>
 
-.img-english {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 16px; 
-    @media (max-width: $mobile-max) {
-        border-radius: 0;
-    }    
-}
-.master-classes-list {
-    list-style: disc;
-    padding-left: 32px;
-    li {
-        line-height: 22px;
-    }
-}
-p {
-    line-height: 22px;
-    margin-bottom: 16px;
-    @media (max-width: $mobile-max) {
-        padding: 0 16px;
-    }      
-}
 </style>
