@@ -66,7 +66,7 @@
 
                     <app-divider /> 
 
-                    <app-slider :data="$store.getters.since_school" />
+                    <app-slider :data="$store.getters.excursions" />
 
                     <app-button 
                         :text="'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ'" 
@@ -127,6 +127,9 @@ export default {
     max-height: 0;
     transition: all 0.3s ease-in-out;
     transform: translateY(-100%);
+    @media (max-width: $mobile-max) {
+        padding: 0;
+    }      
     &.collapsible {
         transform: translateY(0%);
         max-height: 100%;

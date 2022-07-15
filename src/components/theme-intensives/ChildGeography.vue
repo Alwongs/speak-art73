@@ -124,6 +124,9 @@ export default {
     max-height: 0;
     transition: all 0.3s ease-in-out;
     transform: translateY(-100%);
+    @media (max-width: $mobile-max) {
+        padding: 0;
+    }   
     &.collapsible {
         transform: translateY(0%);
         max-height: 100%;

@@ -17,6 +17,7 @@ h2 {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 16px;
+    padding-left: 16px;
 }
 a {
     text-decoration: none;
@@ -66,7 +67,7 @@ p {
 }
 .dotted-list {
     list-style: disc;
-    padding-left: 16px;
+    padding-left: 32px;
     li {
         line-height: 22px;
     }

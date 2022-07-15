@@ -51,7 +51,7 @@
                         Продолжительность: 5 дней по 2 часа каждый день
                     </p>
 
-
+                    <app-divider />
 
                     <h2 class="text-center">СТОИМОСТЬ</h2>
                     <ul class="price-list">
@@ -129,6 +129,9 @@ export default {
     max-height: 0;
     transition: all 0.3s ease-in-out;
     transform: translateY(-100%);
+    @media (max-width: $mobile-max) {
+        padding: 0;
+    }      
     &.collapsible {
         transform: translateY(0%);
         max-height: 100%;
@@ -137,6 +140,7 @@ export default {
 }
 .subject-list {
     margin-bottom: 16px;
+    padding-left: 16px;
     li {
         margin-bottom: 16px;
             line-height: 22px;
