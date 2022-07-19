@@ -72,7 +72,7 @@ export default {
 <style lang="scss" scoped>
 
 .menu-wrap {
-    z-index: 2;
+    z-index: 4;
     font-size: 22px;
     position: fixed;
     top: 0;

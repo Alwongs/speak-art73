@@ -26,17 +26,8 @@ export default {
 <style lang="scss" scoped>
 
 footer {
-    text-align: center;
-    .arrow-up {
-        display: block;
-        background-image: url('../../assets/img/svg/arrow_up.svg');
-        background-position: center;
-        width: 48px;
-        height: 48px;
-        align-self: center;
-        margin: 0 auto;    
-        margin-bottom: 24px; 
-    }   
+    padding-bottom: 16px;
+    text-align: center; 
     .adress {
         font-size: 14px;
     }

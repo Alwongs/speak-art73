@@ -31,10 +31,6 @@ export default {
             this.$emit('toggleSlide');
         }
     },
-    created() {
-        
-        console.log(this.data)
-    }
 }
 </script>
 

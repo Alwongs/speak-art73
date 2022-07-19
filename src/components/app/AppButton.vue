@@ -1,24 +1,30 @@
 <template>
-    <div 
-        class="wrap-btn"
-        :class="{ 'btn-pulsing': btn_pulsing, 'trigger': trigger}"
+    <a 
+        :href="href" 
+        class="viber"
     >
-        <div class="btn">
-            <div class="title">
-                {{ text }}
+        <div 
+            class="wrap-btn"
+            :class="{ 'btn-pulsing': btn_pulsing, 'trigger': trigger}"
+        >
+            <div class="btn">
+                <div class="title">
+                    {{ text }}
+                </div>
+                <div class="close">
+                    {{ arrow }}
+                </div>                
             </div>
-            <div class="close">
-                {{ arrow }}
-            </div>                
-        </div>
-    </div>    
+        </div>  
+    </a> 
+  
 </template>
 
 <script>
 
 export default {
     name: 'AppButton',
-    props: [ 'text', 'btn_pulsing', 'trigger', 'arrow']
+    props: [ 'text', 'btn_pulsing', 'trigger', 'arrow', 'href']
 }
 </script>
 

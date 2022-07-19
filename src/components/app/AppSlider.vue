@@ -67,7 +67,7 @@ export default {
         },
         startSlide() {
             this.interval = setInterval(() => {
-                    this.nextSlide();
+                this.nextSlide();
             }, 3500);
         },
         stopSlide() {
@@ -78,6 +78,9 @@ export default {
         if (this.isAutoSlider) {
             this.startSlide();
         }
+    },
+    beforeUnmount() {
+        this.stopSlide();
     }
 }
 </script>
@@ -128,10 +131,10 @@ export default {
     top: 0;
     width: 64px;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../../assets/img/svg/arrow_slide.svg') no-repeat center;
+    background-image: url('../../assets/img/svg/arrow_slide.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
     &:hover {
         background-color: $bg-slider-button-hover;
     }

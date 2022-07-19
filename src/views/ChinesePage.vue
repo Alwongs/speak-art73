@@ -5,9 +5,8 @@
             alt="photo"
             class="img-content"
         >
-        <p style="color:red;">
-            текста пока нетююю :(
-        </p>
+
+        <p style="color:red;">текста пока нетююю :(</p>
 
         <img 
             :src="require('@/assets/img/jpg/chinese/002.jpg')"  
@@ -15,15 +14,15 @@
             class="img-content"
         >
 
-        <p style="color:red;">‌
-            текста пока нетююю :(
-        </p>
+        <p style="color:red;">текста пока нетююю :(</p>
+
         <app-divider />  
 
         <app-slider 
             :data="$store.getters.slider_chinese" 
-            :isAutoSlider="false"            
+            :isAutoSlider="true"            
         />
+        
         <app-button 
             :text="'ЗАПИСАТЬСЯ НА ПРОБНОЕ ЗАНЯТИЕ'" 
             :btn_pulsing="true"

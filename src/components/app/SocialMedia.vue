@@ -1,13 +1,22 @@
 <template>  
     <ul class="social-media-links">
         <li>
-            <a href="#" class="whatsapp"></a> 
+            <a 
+                href="whatsapp://send?phone=79020079848&amp;text=" 
+                class="whatsapp"
+            ></a> 
         </li>
         <li>
-            <a href="#" class="viber"></a> 
+            <a 
+                href="viber://chat?number=%2B79020079848" 
+                class="viber"
+            ></a> 
         </li>
         <li>
-            <a href="#" class="telegram"></a> 
+            <a 
+                href="tg://resolve?domain=speakart73" 
+                class="telegram"
+            ></a> 
         </li>
     </ul>                 
 </template>

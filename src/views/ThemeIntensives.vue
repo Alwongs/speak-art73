@@ -5,6 +5,7 @@
             alt="photo"
             class="img-content"
         >
+        
         <child-geography />
         <since-school />
         <the-exursions />

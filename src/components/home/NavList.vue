@@ -46,6 +46,10 @@ export default {
     padding: 30px 40px;
     button {
         background-color: #fff;
+        background-image: url('../../assets/img/svg/arrow_forward.svg');
+        background-repeat: no-repeat;
+        background-position: 96% center;
+        background-size: 28px;
         border-radius: 20px;
         height: 100px;
         width: 100%;
@@ -69,7 +73,6 @@ export default {
                 background-color: rgba(44, 189, 46, 0.1); 
             }       
         }
-
     }    
 }
 </style>
