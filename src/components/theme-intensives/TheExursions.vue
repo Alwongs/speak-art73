@@ -61,6 +61,7 @@
                         :text="'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ'" 
                         :btn_pulsing="true"
                         :arrow="'&#9658;'" 
+                        :href="'viber://chat?number=%2B79020079848'"
                     /> 
                     
                     <a 

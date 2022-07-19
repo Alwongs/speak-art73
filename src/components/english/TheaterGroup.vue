@@ -6,7 +6,6 @@
             :trigger="true"
             :arrow="'&#9660;'"
             @click="toggleBlock"
-            :href="'#'"
         />     
         <section-panel 
             v-else 
