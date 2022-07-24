@@ -4,6 +4,8 @@
             :data="data"
             :current_index="current_index" 
             @toggleSlide="toggleSlide"
+            @onMoveLeft="nextSlide"
+            @onMoveRight="prevSlide"
         />
         <div class="slider-footer">
             <div class="dots-group">
@@ -32,13 +34,28 @@ import ImageGroup from './ImageGroup.vue';
 
 export default {
     name: 'AppSlider',
-    props: ['data', 'isAutoSlider'],
+    props: ['data', 'isAutoSlider', 'sliding'],
+    watch: {
+        sliding(newVal, oldVal) {
+            if (oldVal > newVal) {
+                this.prevSlide();
+                this.$emit('updateTrigger', newVal)               
+            }
+            if (oldVal < newVal) {
+                this.nextSlide();
+                this.$emit('updateTrigger', newVal) 
+            }
+        }
+    },    
     components: { ImageGroup },
     data() {
         return {
             interval: null,
             isPaused: false,
-            current_index: 0
+            current_index: 0,
+            
+            x1: null,
+            xDiff: null            
         }
     },    
     methods: {
@@ -46,20 +63,24 @@ export default {
             this.current_index = id - 1;
         },
         prevSlide() {
+ 
             if (this.current_index >= 1) {
                 this.current_index = this.current_index - 1;
             }
+           
         },
         nextSlide() {
+          
             if (this.current_index >= this.data.length - 1) {
                 this.current_index = 0;
             } else {
                 this.current_index = this.current_index + 1;
             }
+         
         },
         toggleSlide() {
             this.isPaused = !this.isPaused
-            if(!this.isPaused) {
+            if(!this.isPaused && this.isAutoSlider) {
                 this.startSlide();
             } else {
                 this.stopSlide();
@@ -72,7 +93,9 @@ export default {
         },
         stopSlide() {
             clearInterval(this.interval)
-        }        
+        },
+
+        
     },
     created() {
         if (this.isAutoSlider) {
@@ -81,7 +104,8 @@ export default {
     },
     beforeUnmount() {
         this.stopSlide();
-    }
+    },
+     
 }
 </script>
 
@@ -145,5 +169,8 @@ export default {
         right: 0;
         transform: rotate(180deg);      
     }
+    @media (max-width: $mobile-max) {
+        display: none;
+    }       
 }
 </style>

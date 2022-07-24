@@ -40,7 +40,12 @@
 
                     <app-divider />
                     
-                    <app-slider :data="$store.getters.slider_english_theater"/>
+                    <app-slider 
+                        :data="$store.getters.slider_english_theater"
+                        :isAutoSlider="false"
+                        :sliding="sliding"
+                        @updateTrigger="updateTrigger"
+                    />
 
                     <app-divider />
 
@@ -105,14 +110,51 @@ export default {
     },
     data() {
         return {
-            isBlockOpen: false
+            isBlockOpen: false,
+            sliding: 0,
+            slider: null      
         }
     },      
-    methods: {         
+    methods: {   
+        updateTrigger(newVal) {
+            setTimeout(() => {
+                console.log('setTimeOut-theater')
+                this.sliding = newVal;
+            })
+        },   
+
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
-        }       
+        },
+
+        touchStart(e) {
+            let firstTouch = e.touches[0]
+            this.x1 = firstTouch.clientX;
+        },
+        touchEnd(e) {
+            let x2 = e.changedTouches[0].clientX;
+            if (x2 < this.x1) {
+                this.sliding = this.sliding + 1; 
+            }
+            if (x2 > this.x1) {
+                this.sliding = this.sliding - 1;             
+            }
+        },            
     }, 
+    mounted() {
+        let slider = document.querySelectorAll('.wrapper-slider')[1];
+        slider.ontouchstart = (e) => {
+            this.touchStart(e);
+        }
+        slider.ontouchend = (e) => {
+            this.touchEnd(e);
+        } 
+        this.slider = slider;        
+    },
+    unmounted() {
+        this.slider.ontouchstart = null;
+        this.slider.ontouchend = null;        
+    } 
 }
 </script>
 

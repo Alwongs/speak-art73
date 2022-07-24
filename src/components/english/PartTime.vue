@@ -37,7 +37,12 @@
 
                     <app-divider />
                     
-                    <app-slider :data="$store.getters.slider_english_part_time" />                
+                    <app-slider 
+                        :data="$store.getters.slider_english_part_time" 
+                        :isAutoSlider="false"
+                        :sliding="sliding"
+                        @updateTrigger="updateTrigger"
+                    />                
 
                     <app-divider />
 
@@ -87,14 +92,50 @@ export default {
     },
     data() {
         return {
-            isBlockOpen: false
+            isBlockOpen: false,
+            sliding: 0,
+            slider: null
         }
     },
     methods: {
+        updateTrigger(newVal) {
+            setTimeout(() => {
+                console.log('setTimeOut-part-time')                
+                this.sliding = newVal;
+            })
+        }, 
+
+        touchStart(e) {
+            let firstTouch = e.touches[0]
+            this.x1 = firstTouch.clientX;
+        },
+        touchEnd(e) {
+            let x2 = e.changedTouches[0].clientX;
+            if (x2 < this.x1) {
+                this.sliding = this.sliding + 1; 
+            }
+            if (x2 > this.x1) {
+                this.sliding = this.sliding - 1;               
+            }
+        },                 
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
         }       
     },
+    mounted() {
+        let slider = document.querySelectorAll('.wrapper-slider')[2];
+        slider.ontouchstart = (e) => {
+            this.touchStart(e);
+        }
+        slider.ontouchend = (e) => {
+            this.touchEnd(e);
+        } 
+        this.slider = slider;
+    },
+    unmounted() {
+        this.slider.ontouchstart = null;
+        this.slider.ontouchend = null;  
+    }     
 }
 </script>
 
