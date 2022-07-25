@@ -55,7 +55,12 @@
 
                     <app-divider /> 
 
-                    <app-slider :data="$store.getters.excursions" />
+                    <app-slider 
+                        :data="$store.getters.excursions"  
+                        :isAutoSlider="false"
+                        :sliding="sliding"
+                        @updateTrigger="updateTrigger" 
+                    />
 
                     <app-button 
                         :text="'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ'" 
@@ -80,9 +85,11 @@ import SectionPanel from '@/components/app/SectionPanel.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'SinceSchool',
+    mixins: [swiperMixin],
     components: { 
         AppButton,
         SectionPanel,
@@ -92,10 +99,11 @@ export default {
     },
     data() {
         return {
-            isBlockOpen: false
+            isBlockOpen: false,
+            sliderNumber: 2 // номер слайдера на странице начиная с 0.
         }
-    },      
-    methods: {         
+    },
+    methods: {                 
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
         }       

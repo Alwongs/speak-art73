@@ -13,6 +13,8 @@
         <app-slider 
             :data="$store.getters.slider_english" 
             :isAutoSlider="true"
+            :sliding="sliding"
+            @updateTrigger="updateTrigger"            
         />
 
         <app-divider />
@@ -28,15 +30,28 @@ import AppSlider from '@/components/app/AppSlider.vue'
 import TheaterGroup from '@/components/english/TheaterGroup.vue'
 import PartTime from '@/components/english/PartTime.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'EnglishPage', 
+    mixins: [swiperMixin],
     components: { 
         AppSlider,
         TheaterGroup,
         PartTime,
         AppDivider
     }, 
+    data() {
+        return {
+            isBlockOpen: false,
+            sliderNumber: 0 // номер слайдера на странице начиная с 0.
+        }
+    },
+    methods: {                 
+        toggleBlock() {
+            this.isBlockOpen = !this.isBlockOpen;
+        }       
+    },     
 }
 </script>
 

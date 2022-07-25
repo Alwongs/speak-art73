@@ -21,6 +21,8 @@
         <app-slider 
             :data="$store.getters.master_classes" 
             :isAutoSlider="false"
+            :sliding="sliding"
+            @updateTrigger="updateTrigger"  
         />
         <app-button 
             :text="'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ'" 
@@ -33,13 +35,26 @@
 <script>
 import AppButton from '@/components/app/AppButton.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'EnglishPage', 
+    mixins: [swiperMixin],
     components: {
         AppButton, 
         AppSlider,
     }, 
+    data() {
+        return {
+            isBlockOpen: false,
+            sliderNumber: 0 // номер слайдера на странице начиная с 0.
+        }
+    },
+    methods: {                 
+        toggleBlock() {
+            this.isBlockOpen = !this.isBlockOpen;
+        }       
+    },      
 }
 </script>
 

@@ -97,9 +97,11 @@ import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
 import PriceItem from '@/components/app/PriceItem.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'TheaterGroup',
+    mixins: [swiperMixin],
     components: { 
         AppButton,
         SectionPanel,
@@ -111,50 +113,14 @@ export default {
     data() {
         return {
             isBlockOpen: false,
-            sliding: 0,
-            slider: null      
+            sliderNumber: 1 // номер слайдера на странице начиная с 0.
         }
     },      
-    methods: {   
-        updateTrigger(newVal) {
-            setTimeout(() => {
-                console.log('setTimeOut-theater')
-                this.sliding = newVal;
-            })
-        },   
-
+    methods: {
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
-        },
-
-        touchStart(e) {
-            let firstTouch = e.touches[0]
-            this.x1 = firstTouch.clientX;
-        },
-        touchEnd(e) {
-            let x2 = e.changedTouches[0].clientX;
-            if (x2 < this.x1) {
-                this.sliding = this.sliding + 1; 
-            }
-            if (x2 > this.x1) {
-                this.sliding = this.sliding - 1;             
-            }
-        },            
-    }, 
-    mounted() {
-        let slider = document.querySelectorAll('.wrapper-slider')[1];
-        slider.ontouchstart = (e) => {
-            this.touchStart(e);
-        }
-        slider.ontouchend = (e) => {
-            this.touchEnd(e);
-        } 
-        this.slider = slider;        
-    },
-    unmounted() {
-        this.slider.ontouchstart = null;
-        this.slider.ontouchend = null;        
-    } 
+        },           
+    },  
 }
 </script>
 

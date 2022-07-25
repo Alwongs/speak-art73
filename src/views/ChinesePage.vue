@@ -20,7 +20,9 @@
 
         <app-slider 
             :data="$store.getters.slider_chinese" 
-            :isAutoSlider="true"            
+            :isAutoSlider="true"
+            :sliding="sliding"
+            @updateTrigger="updateTrigger"                         
         />
         
         <app-button 
@@ -35,14 +37,27 @@
 import AppButton from '@/components/app/AppButton.vue'
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'ChinesePage', 
+    mixins: [swiperMixin],
     components: { 
         AppButton,
         AppSlider,
         AppDivider
     }, 
+    data() {
+        return {
+            isBlockOpen: false,
+            sliderNumber: 0 // номер слайдера на странице начиная с 0.
+        }
+    },
+    methods: {                 
+        toggleBlock() {
+            this.isBlockOpen = !this.isBlockOpen;
+        }       
+    },     
 }
 </script>
 

@@ -35,12 +35,18 @@
 
         <app-divider /> 
 
-        <app-slider :data="$store.getters.excursions" />
+        <app-slider 
+            :data="$store.getters.excursions" 
+            :isAutoSlider="false"
+            :sliding="sliding"
+            @updateTrigger="updateTrigger" 
+        />
 
         <app-button 
             :text="'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ'" 
             :btn_pulsing="true"
             :arrow="'&#9658;'" 
+            :href="'viber://chat?number=%2B79020079848'"
         /> 
     </main>   
 </template>
@@ -48,13 +54,28 @@
 <script>
 import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
+import AppButton from '@/components/app/AppButton.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
-    name: 'ExcursionsPage', 
+    name: 'ExcursionsPage',  
+    mixins: [swiperMixin],
     components: { 
         AppSlider,
-        AppDivider
+        AppDivider,
+        AppButton
     }, 
+    data() {
+        return {
+            isBlockOpen: false,
+            sliderNumber: 0 // номер слайдера на странице начиная с 0.
+        }
+    },
+    methods: {                 
+        toggleBlock() {
+            this.isBlockOpen = !this.isBlockOpen;
+        }       
+    },     
 }
 </script>
 

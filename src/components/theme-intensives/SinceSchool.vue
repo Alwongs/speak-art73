@@ -68,7 +68,12 @@
 
                     <app-divider />
 
-                    <app-slider :data="$store.getters.since_school" />
+                    <app-slider 
+                        :data="$store.getters.since_school"   
+                        :isAutoSlider="false"
+                        :sliding="sliding"
+                        @updateTrigger="updateTrigger" 
+                    />
                     
                     <a 
                         class="arrow-up" 
@@ -87,9 +92,11 @@ import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
 import PriceItem from '@/components/app/PriceItem.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'SinceSchool',
+    mixins: [swiperMixin],
     components: { 
         AppButton,
         SectionPanel,
@@ -100,10 +107,11 @@ export default {
     },
     data() {
         return {
-            isBlockOpen: false
+            isBlockOpen: false,
+            sliderNumber: 1 // номер слайдера на странице начиная с 0.
         }
-    },      
-    methods: {         
+    },
+    methods: {                 
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
         }       

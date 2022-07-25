@@ -43,7 +43,7 @@ export default {
     display: flex;
     transition: all .6s ease;
     @media (max-width: $mobile-max) {
-        transition: all .2s ease;
+        transition: all .5s ease;
     }   
 }
 .slide {

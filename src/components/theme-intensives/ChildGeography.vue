@@ -50,7 +50,12 @@
 
                     <p>Продолжительность: 5 дней по 2 часа занятие</p>
                     
-                    <app-slider :data="$store.getters.child_geography" />
+                    <app-slider 
+                        :data="$store.getters.child_geography"  
+                        :isAutoSlider="false"
+                        :sliding="sliding"
+                        @updateTrigger="updateTrigger"  
+                    />
 
                     <app-divider />
 
@@ -86,9 +91,11 @@ import AppSlider from '@/components/app/AppSlider.vue'
 import AppDivider from '@/components/app/AppDivider.vue'
 import AppHeader from '@/components/app/AppHeader.vue'
 import PriceItem from '@/components/app/PriceItem.vue'
+import swiperMixin from '@/mixins/swiper.mixin.js'
 
 export default {
     name: 'ChildGeography',
+    mixins: [swiperMixin],
     components: { 
         AppButton,
         SectionPanel,
@@ -99,10 +106,11 @@ export default {
     },
     data() {
         return {
-            isBlockOpen: false
+            isBlockOpen: false,
+            sliderNumber: 0 // номер слайдера на странице начиная с 0.
         }
-    },      
-    methods: {         
+    },
+    methods: {                 
         toggleBlock() {
             this.isBlockOpen = !this.isBlockOpen;
         }       
